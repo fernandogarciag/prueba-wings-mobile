@@ -24,10 +24,3 @@
   margin-left: 10px;
   list-style: none;
 }
-.header-item a {
-  padding: 10px;
-  border: black 1px solid;
-  border-radius: 2vh;
-  text-decoration: none;
-  color: black;
-}

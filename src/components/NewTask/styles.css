@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  display: flex;
+}
+.half-container {
+  width: 35%;
+  margin: 0 auto;
+  padding-top: 20vh;
+}
+.form {
+  width: 100%;
+  border: black 1px solid;
+  padding: 10px;
+}
+.form label {
+  display: block;
+  margin: 5px 0;
+}
+.form label span {
+  margin-right: 5px;
+}
+.button {
+  display: block;
+  margin: 20px auto;
+  width: 20%;
+  text-align: center;
+}

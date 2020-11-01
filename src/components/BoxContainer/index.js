@@ -1,17 +1,6 @@
 import { MdBrush, MdCheck, MdTimeline } from "react-icons/md";
 import "./styles.css";
-
-const renderTask = ({ id, title, mail, priority, finish_at }) => {
-  return (
-    <div className="box-task" key={id}>
-      <h3>{title}</h3>
-      <p>Propietario: {mail}</p>
-      <p>Prioridad: {priority}</p>
-      <p>Finalizar el: {finish_at}</p>
-    </div>
-  );
-};
-
+import Task from "../Task";
 function BoxContainer({ taskList, taskIdList }) {
   return (
     <div className="box-container">
@@ -22,7 +11,7 @@ function BoxContainer({ taskList, taskIdList }) {
         </div>
         <div className="box-tasks">
           {taskIdList[0].map((id) => {
-            return renderTask(taskList.get(id));
+            return <Task key={id} data={taskList.get(id)} />;
           })}
         </div>
       </div>
@@ -33,7 +22,7 @@ function BoxContainer({ taskList, taskIdList }) {
         </div>
         <div className="box-tasks">
           {taskIdList[1].map((id) => {
-            return renderTask(taskList.get(id));
+            return <Task key={id} data={taskList.get(id)} />;
           })}
         </div>
       </div>
@@ -44,7 +33,7 @@ function BoxContainer({ taskList, taskIdList }) {
         </div>
         <div className="box-tasks">
           {taskIdList[2].map((id) => {
-            return renderTask(taskList.get(id));
+            return <Task key={id} data={taskList.get(id)} />;
           })}
         </div>
       </div>

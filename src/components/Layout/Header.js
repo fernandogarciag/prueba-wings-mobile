@@ -1,3 +1,5 @@
+import RedirectButtom from "../RedirectButtom";
+
 function Header() {
   return (
     <header className="header">
@@ -7,10 +9,10 @@ function Header() {
       <nav className="header-nav">
         <ul>
           <li className="header-item">
-            <a href="/nuevo">Nueva tarea</a>
+            <RedirectButtom href="/nuevo">Nueva tarea</RedirectButtom>
           </li>
           <li className="header-item">
-            <a href="/historial">Historial</a>
+            <RedirectButtom href="/historial">Historial</RedirectButtom>
           </li>
         </ul>
       </nav>

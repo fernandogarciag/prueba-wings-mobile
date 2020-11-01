@@ -3,11 +3,11 @@ import { Fragment } from "react";
 import "./styles.css";
 import Header from "./Header";
 
-function Layout(props) {
+function Layout({ children }) {
   return (
     <Fragment>
       <Header />
-      {props.children}
+      {children}
     </Fragment>
   );
 }
