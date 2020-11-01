@@ -1,0 +1,26 @@
+.box-container {
+  display: flex;
+  width: 100%;
+}
+.box {
+  width: calc(100% / 3);
+}
+.box-title {
+  height: 50px;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.box-title.start {
+  background-color: rgb(217, 54, 81);
+}
+.box-title.process {
+  background-color: rgb(149, 42, 222);
+}
+.box-title.finished {
+  background-color: rgb(106, 156, 71);
+}
+.box-title h2 {
+  padding-left: 10px;
+}

@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Tarea no empezada",
+      "mail": "fernando@hotmail.com",
+      "priority": "alta",
+      "created_at": 1,
+      "finish_at": "52",
+      "state": 0
+    },
+    {
+      "id": 6,
+      "title": "Tarea finalizada",
+      "mail": "fernando@hotmail.com",
+      "priority": "normal",
+      "created_at": 1,
+      "finish_at": "52",
+      "state": 2
+    },
+    {
+      "title": "Tarea empezada",
+      "mail": "fernando@hotmail.com",
+      "priority": "alta",
+      "created_at": 1,
+      "finish_at": "52",
+      "state": 1,
+      "id": 8
+    }
+  ],
+  "history": []
+}

@@ -1,0 +1,9 @@
+.box-task {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
+  border: grey 1px solid;
+}
+.box-task h3 {
+  margin-bottom: 5px;
+}
