@@ -40,6 +40,17 @@ const api = {
       });
     },
   },
+  history: {
+    list() {
+      return callApi("/history?_sort=id&_order=desc");
+    },
+    create(data) {
+      return callApi(`/history`, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+    },
+  },
 };
 
 export default api;

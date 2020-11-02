@@ -13,7 +13,6 @@ function Home() {
       } catch (error) {
         console.log("error");
       }
-      console.log(data);
       setTaskList(
         data.reduce((list, task) => {
           list.set(task.id, task);
@@ -24,11 +23,9 @@ function Home() {
         data.reduce(
           (list, task) => {
             switch (task.state) {
-              case 0:
               case "0":
                 list[0].push(task.id);
                 break;
-              case 1:
               case "1":
                 list[1].push(task.id);
                 break;

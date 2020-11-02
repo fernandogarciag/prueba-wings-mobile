@@ -12,8 +12,8 @@ function BoxContainer({ taskList, taskIdList }) {
         <div className="box-tasks">
           {taskIdList[0].map((id) => {
             return (
-              <a href={`/${id}`}>
-                <Task key={id} data={taskList.get(id)} />
+              <a href={`/tarea/${id}`} key={id}>
+                <Task data={taskList.get(id)} />
               </a>
             );
           })}
@@ -27,8 +27,8 @@ function BoxContainer({ taskList, taskIdList }) {
         <div className="box-tasks">
           {taskIdList[1].map((id) => {
             return (
-              <a href={`/${id}`}>
-                <Task key={id} data={taskList.get(id)} />
+              <a href={`/${id}`} key={id}>
+                <Task data={taskList.get(id)} />
               </a>
             );
           })}
@@ -42,8 +42,8 @@ function BoxContainer({ taskList, taskIdList }) {
         <div className="box-tasks">
           {taskIdList[2].map((id) => {
             return (
-              <a href={`/${id}`}>
-                <Task key={id} data={taskList.get(id)} />
+              <a href={`/${id}`} key={id}>
+                <Task data={taskList.get(id)} />
               </a>
             );
           })}

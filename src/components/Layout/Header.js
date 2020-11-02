@@ -1,5 +1,4 @@
 import RedirectButtom from "../RedirectButtom";
-
 import Logo from "./logo_full.png";
 
 function Header() {

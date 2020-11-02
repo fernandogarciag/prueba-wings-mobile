@@ -5,7 +5,7 @@ import Form from "../Form";
 
 function EditTask({ data, handleForm, fetchEditData, fetchDeleteData }) {
   return (
-    <div className="container">
+    <div className="container-edit">
       <div className="half-container">
         <Form
           htitle="Ingrese los datos de la tarea"

@@ -5,7 +5,7 @@ import Form from "../Form";
 
 function NewTask({ data, handleForm, fetchData }) {
   return (
-    <div className="container">
+    <div className="container-new">
       <div className="half-container">
         <Form
           htitle="Ingrese los datos de la tarea"

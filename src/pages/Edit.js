@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
-
+import { useHistory } from "react-router-dom";
 import EditTask from "../components/EditTask";
 import api from "../api";
+import emailjs from "emailjs-com";
 
 function Edit(props) {
+  let history = useHistory();
+  const date = new Date();
+  const currentDate = `${date.getFullYear()}-${
+    date.getMonth() > 8 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`
+  }-${date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`}`;
+  const completeDate = `${currentDate} ${date.getHours()}:${date.getMinutes()}`;
   const id = props.match.params.taskId;
   const [title, setTitle] = useState("");
   const [mail, setMail] = useState("");
@@ -46,7 +53,8 @@ function Edit(props) {
         setPriority(value);
     }
   };
-  const fetchEditData = async () => {
+  const fetchEditData = async (e) => {
+    e.preventDefault();
     const data = {
       title,
       mail,
@@ -55,18 +63,59 @@ function Edit(props) {
       created_at,
       finish_at,
     };
+    const historyData = {
+      action: "1",
+      date: completeDate,
+      data,
+    };
+    const serviceID = "gmail";
+    const templateID = "template_irctc2z";
+    const userID = "user_D9qtGdNuCwSyRj6JhOrIe";
+    const templateParams = {
+      title,
+      mail,
+      state: "Editada",
+    };
     try {
       await api.tasks.update(id, data);
+      await api.history.create(historyData);
+      await emailjs.send(serviceID, templateID, templateParams, userID);
     } catch (error) {
       console.log("error");
     }
+    history.push("/");
   };
-  const fetchDeleteData = async () => {
+  const fetchDeleteData = async (e) => {
+    e.preventDefault();
+    const data = {
+      title,
+      mail,
+      state,
+      priority,
+      created_at,
+      finish_at,
+    };
+    const historyData = {
+      action: "2",
+      date: completeDate,
+      data,
+    };
+    const serviceID = "gmail";
+    const templateID = "template_irctc2z";
+    const userID = "user_D9qtGdNuCwSyRj6JhOrIe";
+    const templateParams = {
+      title,
+      mail,
+      state: "Eliminada",
+    };
     try {
       await api.tasks.remove(id);
+      await api.history.create(historyData);
+      await emailjs.send(serviceID, templateID, templateParams, userID);
     } catch (error) {
       console.log("error");
     }
+    history.push("/");
   };
   return (
     <EditTask
