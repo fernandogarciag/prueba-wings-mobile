@@ -1,10 +1,12 @@
 import RedirectButtom from "../RedirectButtom";
 
+import Logo from "./logo_full.png";
+
 function Header() {
   return (
     <header className="header">
       <a className="header-img" href="/">
-        <img src="./logo_full.png" alt="Logo" />
+        <img src={Logo} alt="Logo" />
       </a>
       <nav className="header-nav">
         <ul>

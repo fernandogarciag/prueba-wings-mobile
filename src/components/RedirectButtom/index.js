@@ -1,5 +1,3 @@
-import { Redirect } from "react-router-dom";
-
 import "./styles.css";
 
 function RedirectButtom({ children, href, className, onClick = () => {} }) {

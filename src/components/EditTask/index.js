@@ -1,9 +1,9 @@
-import Task from "../Task";
 import "./styles.css";
+import Task from "../Task";
 import RedirectButtom from "../RedirectButtom";
 import Form from "../Form";
 
-function NewTask({ data, handleForm, fetchData }) {
+function EditTask({ data, handleForm, fetchEditData, fetchDeleteData }) {
   return (
     <div className="container">
       <div className="half-container">
@@ -15,12 +15,15 @@ function NewTask({ data, handleForm, fetchData }) {
       </div>
       <div className="half-container">
         <Task data={data} />
-        <RedirectButtom className="button" href="/" onClick={fetchData}>
-          Crear Tarea
+        <RedirectButtom className="button" href="/" onClick={fetchEditData}>
+          Editar Tarea
+        </RedirectButtom>
+        <RedirectButtom className="button" href="/" onClick={fetchDeleteData}>
+          Borrar Tarea
         </RedirectButtom>
       </div>
     </div>
   );
 }
 
-export default NewTask;
+export default EditTask;

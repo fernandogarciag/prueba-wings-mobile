@@ -11,7 +11,11 @@ function BoxContainer({ taskList, taskIdList }) {
         </div>
         <div className="box-tasks">
           {taskIdList[0].map((id) => {
-            return <Task key={id} data={taskList.get(id)} />;
+            return (
+              <a href={`/${id}`}>
+                <Task key={id} data={taskList.get(id)} />
+              </a>
+            );
           })}
         </div>
       </div>
@@ -22,7 +26,11 @@ function BoxContainer({ taskList, taskIdList }) {
         </div>
         <div className="box-tasks">
           {taskIdList[1].map((id) => {
-            return <Task key={id} data={taskList.get(id)} />;
+            return (
+              <a href={`/${id}`}>
+                <Task key={id} data={taskList.get(id)} />
+              </a>
+            );
           })}
         </div>
       </div>
@@ -33,7 +41,11 @@ function BoxContainer({ taskList, taskIdList }) {
         </div>
         <div className="box-tasks">
           {taskIdList[2].map((id) => {
-            return <Task key={id} data={taskList.get(id)} />;
+            return (
+              <a href={`/${id}`}>
+                <Task key={id} data={taskList.get(id)} />
+              </a>
+            );
           })}
         </div>
       </div>

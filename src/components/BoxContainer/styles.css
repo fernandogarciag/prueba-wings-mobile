@@ -24,3 +24,9 @@
 .box-title h2 {
   padding-left: 10px;
 }
+.box-tasks a {
+  text-decoration: none;
+}
+.box-tasks a:visited {
+  color: black;
+}

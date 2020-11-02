@@ -1,51 +1,44 @@
 import React, { useState } from "react";
 import NewTask from "../components/NewTask";
-import { Redirect } from "react-router-dom";
 import api from "../api";
 
 function New() {
-  const [title, setTitle] = useState("Titulo");
-  const [mail, setMail] = useState("Correo");
+  const date = new Date();
+  const currentDate = `${date.getFullYear()}-${
+    date.getMonth() > 8 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`
+  }-${date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`}`;
+  const [title, setTitle] = useState("");
+  const [mail, setMail] = useState("");
+  const [state, setState] = useState("0");
   const [priority, setPriority] = useState("0");
-  const [finish_at, setFinishAt] = useState("Fecha");
-  const handleForm = (data, object) => {
-    switch (object) {
+  const [finish_at, setFinishAt] = useState(currentDate);
+  const handleForm = ({ target }) => {
+    const { id, value } = target;
+    switch (id) {
       case "title":
-        setTitle(data);
+        setTitle(value);
         break;
       case "mail":
-        setMail(data);
+        setMail(value);
+        break;
+      case "state":
+        setState(value);
         break;
       case "finish_at":
-        setFinishAt(data);
+        setFinishAt(value);
         break;
       default:
-        switch (data) {
-          case "Baja":
-            setPriority("1");
-            break;
-          case "Alta":
-            setPriority("2");
-            break;
-          default:
-            setPriority("0");
-            break;
-        }
+        setPriority(value);
     }
   };
   const fetchData = async () => {
-    const date = new Date();
-    const currentDate = `${date.getFullYear()}-${
-      date.getMonth() > 8 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`
-    }-${date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`}`;
-    const finishDate = finish_at !== "Fecha" ? finish_at : currentDate;
     const data = {
       title,
       mail,
+      state,
       priority,
       created_at: currentDate,
-      finish_at: finishDate,
-      state: 0,
+      finish_at,
     };
     try {
       await api.tasks.create(data);
@@ -55,7 +48,7 @@ function New() {
   };
   return (
     <NewTask
-      data={{ title, mail, priority, finish_at }}
+      data={{ title, mail, state, priority, finish_at }}
       handleForm={handleForm}
       fetchData={fetchData}
     />

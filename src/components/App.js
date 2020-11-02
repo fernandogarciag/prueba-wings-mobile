@@ -5,6 +5,7 @@ import "./App.css";
 import Layout from "./Layout";
 import Home from "../pages/Home";
 import New from "../pages/New";
+import Edit from "../pages/Edit";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/nuevo" component={New} />
+          <Route exact path="/:taskId" component={Edit} />
         </Switch>
       </Layout>
     </BrowserRouter>
